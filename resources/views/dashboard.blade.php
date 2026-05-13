@@ -9,7 +9,7 @@
     <div class="w-full" x-show="!loading" style="display: none;">
         <div class="flex flex-col md:flex-row justify-between items-center mb-12 border-b border-white/10 pb-6 gap-6 text-center md:text-left">
             <div>
-                <h1 class="text-3xl font-bold bg-gradient-to-br from-slate-100 to-slate-400 bg-clip-text text-transparent">Overview</h1>
+                <h1 class="text-3xl font-bold text-slate-100">Overview</h1>
                 <p class="text-slate-500 mt-2">Welcome back to your TESDA Inventory Management System</p>
             </div>
             <div class="flex flex-col md:flex-row items-center gap-4">
@@ -17,39 +17,39 @@
                     <div class="font-semibold text-slate-100" x-text="user.name">Loading...</div>
                     <div class="text-sm text-slate-500" x-text="user.email">loading@example.com</div>
                 </div>
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-semibold text-xl shadow-[0_4px_12px_rgba(99,102,241,0.25)]" x-text="user.initial">?</div>
-                <button class="px-4 py-2 bg-red-500/10 text-red-400 border border-red-500/20 rounded-lg text-sm font-medium transition-colors hover:bg-red-500/20 md:ml-4" @click="logout" :disabled="loggingOut" :class="{ 'opacity-50 cursor-not-allowed': loggingOut }">
+                <div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center text-white font-semibold text-xl shadow-[0_4px_12px_rgba(79,70,229,0.25)]" x-text="user.initial">?</div>
+                <x-danger-button class="md:ml-4 px-4 py-2 text-sm" @click="logout" x-bind:disabled="loggingOut" x-bind:class="{ 'opacity-50 cursor-not-allowed': loggingOut }">
                     <span x-show="!loggingOut">Sign Out</span>
                     <span x-show="loggingOut">...</span>
-                </button>
+                </x-danger-button>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-white/20">
+            <x-card padding="p-6" class="transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-white/20">
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-indigo-500/15 text-indigo-500">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/></svg>
                 </div>
                 <div class="text-3xl font-bold text-slate-100 mb-1">124</div>
                 <div class="text-sm text-slate-500">Total Items in Inventory</div>
-            </div>
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-white/20">
+            </x-card>
+            <x-card padding="p-6" class="transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-white/20">
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-amber-500/15 text-amber-500">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                 </div>
                 <div class="text-3xl font-bold text-slate-100 mb-1">8</div>
                 <div class="text-sm text-slate-500">Low Stock Alerts</div>
-            </div>
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-white/20">
+            </x-card>
+            <x-card padding="p-6" class="transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-white/20">
                 <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4 bg-green-500/15 text-green-400">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
                 <div class="text-3xl font-bold text-slate-100 mb-1">45</div>
                 <div class="text-sm text-slate-500">Items Distributed This Month</div>
-            </div>
+            </x-card>
         </div>
 
-        <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+        <x-card padding="" class="overflow-hidden">
             <div class="p-6 border-b border-white/10 flex justify-between items-center">
                 <h2 class="text-lg font-semibold text-slate-100">Inventory Items</h2>
             </div>
@@ -111,32 +111,32 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </x-card>
     </div>
 
     <!-- Loading State -->
     <div class="w-full" x-show="loading">
         <div class="flex flex-col md:flex-row justify-between items-center mb-12 border-b border-white/10 pb-6 gap-6">
             <div class="w-[300px] max-w-full">
-                <div class="h-8 w-full mb-2 bg-gradient-to-r from-white/5 via-white/10 to-white/5 bg-[length:200%_100%] animate-skeleton rounded"></div>
-                <div class="h-5 w-[60%] bg-gradient-to-r from-white/5 via-white/10 to-white/5 bg-[length:200%_100%] animate-skeleton rounded"></div>
+                <div class="h-8 w-full mb-2 bg-white/10 animate-pulse rounded"></div>
+                <div class="h-5 w-[60%] bg-white/10 animate-pulse rounded"></div>
             </div>
             <div class="flex items-center gap-4 w-[200px]">
                 <div class="flex-1">
-                    <div class="h-5 w-full mb-2 bg-gradient-to-r from-white/5 via-white/10 to-white/5 bg-[length:200%_100%] animate-skeleton rounded"></div>
-                    <div class="h-4 w-[80%] ml-auto bg-gradient-to-r from-white/5 via-white/10 to-white/5 bg-[length:200%_100%] animate-skeleton rounded"></div>
+                    <div class="h-5 w-full mb-2 bg-white/10 animate-pulse rounded"></div>
+                    <div class="h-4 w-[80%] ml-auto bg-white/10 animate-pulse rounded"></div>
                 </div>
-                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-white/5 via-white/10 to-white/5 bg-[length:200%_100%] animate-skeleton"></div>
+                <div class="w-12 h-12 rounded-full bg-white/10 animate-pulse"></div>
             </div>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div class="h-[150px] bg-gradient-to-r from-white/5 via-white/10 to-white/5 bg-[length:200%_100%] animate-skeleton rounded-2xl"></div>
-            <div class="h-[150px] bg-gradient-to-r from-white/5 via-white/10 to-white/5 bg-[length:200%_100%] animate-skeleton rounded-2xl"></div>
-            <div class="h-[150px] bg-gradient-to-r from-white/5 via-white/10 to-white/5 bg-[length:200%_100%] animate-skeleton rounded-2xl"></div>
+            <div class="h-[150px] bg-white/10 animate-pulse rounded-2xl"></div>
+            <div class="h-[150px] bg-white/10 animate-pulse rounded-2xl"></div>
+            <div class="h-[150px] bg-white/10 animate-pulse rounded-2xl"></div>
         </div>
         
-        <div class="h-[300px] bg-gradient-to-r from-white/5 via-white/10 to-white/5 bg-[length:200%_100%] animate-skeleton rounded-2xl"></div>
+        <div class="h-[300px] bg-white/10 animate-pulse rounded-2xl"></div>
     </div>
 </div>
 @endsection

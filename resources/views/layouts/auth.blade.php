@@ -11,20 +11,14 @@
     @fonts
 
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center overflow-hidden relative font-sans">
-    <!-- Background effects -->
-    <div class="fixed rounded-full blur-[80px] opacity-40 pointer-events-none z-0 w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(99,102,241,0.3),transparent_70%)] -top-[15%] -left-[10%] animate-[pulse_20s_ease-in-out_infinite]"></div>
-    <div class="fixed rounded-full blur-[80px] opacity-40 pointer-events-none z-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(139,92,246,0.25),transparent_70%)] -bottom-[10%] -right-[5%] animate-[pulse_20s_ease-in-out_infinite_reverse]"></div>
-    <div class="fixed rounded-full blur-[80px] opacity-40 pointer-events-none z-0 w-[300px] h-[300px] bg-[radial-gradient(circle,rgba(59,130,246,0.2),transparent_70%)] top-[50%] left-[60%] animate-[pulse_15s_ease-in-out_infinite]"></div>
-    
-    <div class="fixed inset-0 pointer-events-none z-0" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px;"></div>
+<body class="text-slate-100 min-h-screen flex items-center justify-center font-sans selection:bg-indigo-500/30">
+    <!-- Clean, minimal background without gradients -->
+    <div class="fixed inset-0 pointer-events-none z-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
 
     <div class="relative z-10 w-full max-w-[440px] p-6 mx-auto @yield('container_class')">
-        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[20px] p-8 sm:p-10 relative overflow-hidden transition-all duration-500 opacity-0 translate-y-5 animate-card-enter @yield('card_class')">
-            <!-- Top accent line -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] bg-gradient-to-r from-transparent via-indigo-500 to-violet-500 rounded-sm"></div>
+        <x-card animate="true" class="@yield('card_class')" padding="">
             @yield('content')
-        </div>
+        </x-card>
     </div>
 
     @yield('scripts')
