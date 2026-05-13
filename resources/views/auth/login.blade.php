@@ -6,10 +6,8 @@
 <div class="max-w-[440px] mx-auto">
     <x-card animate="true">
         <div class="text-center mb-8">
-            <div class="w-[52px] h-[52px] mx-auto mb-4 bg-indigo-600 rounded-[14px] flex items-center justify-center shadow-[0_8px_32px_rgba(79,70,229,0.15)] animate-iconPulse">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[26px] h-[26px] text-white">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
-                </svg>
+            <div class="w-[64px] h-[64px] mx-auto mb-4 bg-white rounded-[14px] flex items-center justify-center shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-black/5 animate-iconPulse overflow-hidden p-1">
+                <img src="{{ asset('images/logo.png') }}" alt="TESDA Logo" class="w-full h-full object-contain rounded-[10px]">
             </div>
             <h1 class="text-2xl font-bold tracking-tight text-gray-900">Welcome back</h1>
             <p class="text-gray-500 text-sm mt-1.5 leading-relaxed">Sign in to continue to your account</p>
@@ -30,10 +28,6 @@
                     <span class="spinner w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto" x-show="loading" style="display: none;"></span>
                 </x-primary-button>
             </form>
-        </div>
-
-        <div class="text-center mt-6 pt-6 border-t border-white/10">
-            <p class="text-[13px] text-slate-500">Don't have an account? <a href="/register" class="text-indigo-500 font-medium hover:text-violet-500 hover:underline underline-offset-4 transition-all">Create account</a></p>
         </div>
     </x-card>
 </div>

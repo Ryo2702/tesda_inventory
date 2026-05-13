@@ -6,12 +6,10 @@
 <div class="max-w-[440px] mx-auto">
     <x-card animate="true">
         <div class="text-center mb-8">
-            <div class="w-[52px] h-[52px] mx-auto mb-4 bg-indigo-600 rounded-[14px] flex items-center justify-center shadow-[0_8px_32px_rgba(79,70,229,0.15)] animate-iconPulse">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[26px] h-[26px] text-white">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
-                </svg>
+            <div class="w-[64px] h-[64px] mx-auto mb-4 bg-white rounded-[14px] flex items-center justify-center shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-black/5 animate-iconPulse overflow-hidden p-1">
+                <img src="{{ asset('images/logo.jpg') }}" alt="TESDA Logo" class="w-full h-full object-contain rounded-[10px]">
             </div>
-            <h1 class="text-2xl font-bold tracking-tight text-slate-100">Create account</h1>
+            <h1 class="text-2xl font-bold tracking-tight text-black">Create account</h1>
             <p class="text-slate-500 text-sm mt-1.5 leading-relaxed">Get started with your free account</p>
         </div>
 
@@ -34,7 +32,7 @@
             </form>
         </div>
 
-        <div class="text-center mt-6 pt-6 border-t border-white/10">
+        <div class="text-center mt-6 pt-6 border-t border-black">
             <p class="text-[13px] text-slate-500">Already have an account? <a href="/login" class="text-indigo-500 font-medium hover:text-violet-500 hover:underline underline-offset-4 transition-all">Sign in</a></p>
         </div>
     </x-card>

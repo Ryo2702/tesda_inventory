@@ -11,14 +11,12 @@
     @fonts
 
 </head>
-<body class="text-slate-100 min-h-screen flex items-center justify-center font-sans selection:bg-indigo-500/30">
+<body class="text-black min-h-screen flex items-center justify-center font-sans selection:bg-indigo-500/30">
     <!-- Clean, minimal background without gradients -->
     <div class="fixed inset-0 pointer-events-none z-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
 
     <div class="relative z-10 w-full max-w-[440px] p-6 mx-auto @yield('container_class')">
-        <x-card animate="true" class="@yield('card_class')" padding="">
-            @yield('content')
-        </x-card>
+        @yield('content')
     </div>
 
     @yield('scripts')

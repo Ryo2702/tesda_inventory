@@ -6,12 +6,10 @@
 <div class="max-w-[440px] mx-auto">
     <x-card animate="true">
         <div class="text-center mb-8">
-            <div class="w-[52px] h-[52px] mx-auto mb-4 bg-indigo-600 rounded-[14px] flex items-center justify-center shadow-[0_8px_32px_rgba(79,70,229,0.15)] animate-iconPulse">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[26px] h-[26px] text-white">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                </svg>
+            <div class="w-[64px] h-[64px] mx-auto mb-4 bg-white rounded-[14px] flex items-center justify-center shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-black/5 animate-iconPulse overflow-hidden p-1">
+                <img src="{{ asset('images/logo.jpg') }}" alt="TESDA Logo" class="w-full h-full object-contain rounded-[10px]">
             </div>
-            <h1 class="text-2xl font-bold tracking-tight text-slate-100">Forgot password?</h1>
+            <h1 class="text-2xl font-bold tracking-tight text-black">Forgot password?</h1>
             <p class="text-slate-500 text-sm mt-1.5 leading-relaxed">Enter your email and we'll send you a reset link</p>
         </div>
 
@@ -28,7 +26,7 @@
             </form>
         </div>
 
-        <div class="text-center mt-6 pt-6 border-t border-white/10">
+        <div class="text-center mt-6 pt-6 border-t border-black">
             <p class="text-[13px] text-slate-500">Remember your password? <a href="/login" class="text-indigo-500 font-medium hover:text-violet-500 hover:underline underline-offset-4 transition-all">Back to sign in</a></p>
         </div>
     </x-card>
